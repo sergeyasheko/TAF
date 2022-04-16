@@ -2,6 +2,8 @@ import data.StaticProviderDivDouble;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 import static jdk.nashorn.internal.objects.Global.Infinity;
 import static jdk.nashorn.internal.objects.Global.NaN;
 
@@ -48,5 +50,10 @@ public class CalcDivDouble extends BaseTest{
     @Test(dataProvider = "dataForDivDouble",dataProviderClass = StaticProviderDivDouble.class)
     public void testDivDouble9(double a, double b, double expectedResult){
         Assert.assertEquals(calculator.divDouble(a,b),expectedResult, "Неверное деление...");
+    }
+    @Test (expectedExceptions = NullPointerException.class)
+    public void testExceptions(){
+        List list = null;
+        int size = list.size();
     }
 }

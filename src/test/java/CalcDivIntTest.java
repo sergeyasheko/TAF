@@ -2,6 +2,8 @@ import data.StaticProviderDivInt;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 
 public class CalcDivIntTest extends BaseTest{
     @Test(priority = 2,groups = "smoke")
@@ -47,4 +49,8 @@ public class CalcDivIntTest extends BaseTest{
         Assert.assertEquals(calculator.div(a,b), expectedResult, "неверное деление...");
 
 }
-}
+    @Test (expectedExceptions = NullPointerException.class)
+    public void testExceptions(){
+        List list = null;
+        int size = list.size();
+}}
