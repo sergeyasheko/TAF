@@ -1,9 +1,10 @@
+import data.StaticProviderDivInt;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 public class CalcDivIntTest extends BaseTest{
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "smoke")
     public void testDivInt(){
         Assert.assertEquals(calculator.div(10,5), 2, "неверное деление...");
     }
@@ -41,5 +42,9 @@ public class CalcDivIntTest extends BaseTest{
         Assert.assertEquals(calculator.div(34,2), 17, "неверное деление...");
         Thread.sleep(115);
     }
+    @Test(dataProvider = "dataForDivInt",dataProviderClass = StaticProviderDivInt.class)
+    public void testDivInt9(int a, int b, int expectedResult){
+        Assert.assertEquals(calculator.div(a,b), expectedResult, "неверное деление...");
 
+}
 }

@@ -19,6 +19,8 @@
         </groups>
         <classes>
             <class name="GroupsTest"></class>
+            <class name="CalcDivIntTest"></class>
+            <class name="CalcDivDouble"></class>
         </classes>
     </test>
 </suite>
