@@ -29,17 +29,11 @@ public class SmokeTestHW {
         Select selectTypeOfHeating = new Select(selectWebElement2);
 
         width.sendKeys("4");
-        Thread.sleep(1000);
         length.sendKeys("5");
-        Thread.sleep(1000);
         selectRoom.selectByValue("2");
-        Thread.sleep(1000);
         selectTypeOfHeating.selectByIndex(2);
-        Thread.sleep(1000);
         heatLoss.sendKeys("1200");
-        Thread.sleep(1000);
         button.click();
-        Thread.sleep(1500);
 
         WebElement heatingCableOrMatPower = driver.findElement(By.id("floor_cable_power"));
         Assert.assertEquals(668,668);
