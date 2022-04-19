@@ -40,14 +40,31 @@ public class SmokeTest {
        WebElement selectWebElement = driver.findElement(By.id("oSex"));
         Select selectSex = new Select(selectWebElement);
         selectSex.selectByIndex(1);
-        Thread.sleep(2000);
         selectSex.selectByValue("0");
-        Thread.sleep(2000);
         selectSex.selectByVisibleText("женский");
-        Thread.sleep(2000);
+
+        WebElement creatinine = driver.findElement(By.id("oCr"));
+        WebElement age = driver.findElement(By.id("oAge"));
+        WebElement weight = driver.findElement(By.id("oWeight"));
+        WebElement height = driver.findElement(By.id("oHeight"));
+        WebElement button = driver.findElement(By.cssSelector("input[type='button'][value='Рассчитать']"));
+
+        selectSex.selectByVisibleText("женский");
+        creatinine.sendKeys("80");
+        age.sendKeys("38");
+        weight.sendKeys("55");
+        height.sendKeys("163");
+        button.click();
+
+        WebElement resultMDRD = driver.findElement(By.id("txtMDRD"));
+        Assert.assertEquals(resultMDRD.getText(),"MDRD: 74 (мл/мин/1,73кв.м)");
+        WebElement resultHBP = driver.findElement(By.id("txtMDRD1"));
+        Assert.assertEquals(resultHBP.getText(),"ХБП: 2 стадия (при наличии почечного повреждения)");
+        WebElement resultCG = driver.findElement(By.id("txtCG"));
+        Assert.assertEquals(resultCG.getText(),"Cockroft-Gault: 70 (мл/мин)");
+        WebElement resultP = driver.findElement(By.id("txtBSA"));
+        Assert.assertEquals(resultP.getText(),"Поверхность тела:1.58 (кв.м)");
     }
-
-
 
     @AfterMethod
     public void tearDown(){
