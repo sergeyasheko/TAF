@@ -49,10 +49,13 @@ public class SmokeTestWithStar {
         button.click();
         Thread.sleep(2000);
 
-        WebElement results = driver.findElement(By.className("calc-result"));
+        WebElement result1 = driver.findElement(By.cssSelector(".calc-result div:nth-child(1) span"));
+        WebElement result2 = driver.findElement(By.cssSelector(".calc-result div:nth-child(2) span"));
 
-
+        Assert.assertEquals(result1.getAttribute("innerText"),"53");
+        Assert.assertEquals(result2.getAttribute("innerText"),"7");
     }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
