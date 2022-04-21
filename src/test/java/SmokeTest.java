@@ -30,7 +30,6 @@ public class SmokeTest {
         Thread.sleep(2000);
         WebElement result = driver.findElement(By.id("imt-result"));
         Assert.assertEquals(result.getText(),"17.3 - Недостаточная (дефицит) масса тела");
-
     }
 
     @Test
