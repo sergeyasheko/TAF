@@ -22,18 +22,22 @@ public class SmokeTestWithStar {
     public void CalculatorForCalculatingLaminate() throws InterruptedException {
         driver.get("https://calc.by/building-calculators/laminate.html");
         WebElement roomLength = driver.findElement(By.id("ln_room_id"));
+        roomLength.click();
         roomLength.sendKeys(deleteString);
         roomLength.sendKeys("500");
 
         WebElement roomWidth = driver.findElement(By.id("wd_room_id"));
+        roomWidth.click();
         roomWidth.sendKeys(deleteString);
         roomWidth.sendKeys("400");
 
         WebElement laminatePanelLength = driver.findElement(By.id("ln_lam_id"));
+        laminatePanelLength.click();
         laminatePanelLength.sendKeys(deleteString);
         laminatePanelLength.sendKeys("2000");
 
         WebElement laminatePanelWidth = driver.findElement(By.id("wd_lam_id"));
+        laminatePanelWidth.click();
         laminatePanelWidth.sendKeys(deleteString);
         laminatePanelWidth.sendKeys("200");
 
