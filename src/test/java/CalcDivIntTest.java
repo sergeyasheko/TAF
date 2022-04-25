@@ -17,6 +17,7 @@ public class CalcDivIntTest extends BaseTest{
     @Test(priority = 1, testName = "Деление на 0")
     public void testDivInt2(){
         Assert.assertEquals(calculator.div(9,0), 3, "неверное деление...");
+        // ToDo: Ожидаемый результат 3?
     }
     @Test(enabled = false)
     public void testDivInt3(){
@@ -53,4 +54,9 @@ public class CalcDivIntTest extends BaseTest{
     public void testExceptions(){
         List list = null;
         int size = list.size();
-}}
+}
+
+    // Todo: Между методами должна быть пустая строка
+    // ToDo: Форматирование текста в классе Code -> Reformat Code
+    // ToDo: Название тестовых методов - переделать согласно https://dzone.com/articles/7-popular-unit-test-naming
+}

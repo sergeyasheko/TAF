@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+
 import static jdk.nashorn.internal.objects.Global.Infinity;
 import static jdk.nashorn.internal.objects.Global.NaN;
 
@@ -56,4 +57,8 @@ public class CalcDivDouble extends BaseTest{
         List list = null;
         int size = list.size();
     }
+
+    // ToDo: Название тестовых методов - переделать согласно https://dzone.com/articles/7-popular-unit-test-naming
+    // Todo: Между методами должна быть пустая строка
+    // ToDo: Форматирование текста в классе Code -> Reformat Code
 }
