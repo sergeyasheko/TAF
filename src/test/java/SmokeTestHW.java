@@ -11,12 +11,13 @@ public class SmokeTestHW {
     private WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         BrowserService browserService = new BrowserService();
         driver = browserService.getDriver();
     }
+
     @Test
-    public void electricUnderfloorHeatingCalculator() throws InterruptedException{
+    public void electricUnderfloorHeatingCalculator() throws InterruptedException {
         driver.get("https://kermi-fko.ru/raschety/Calc-Rehau-Solelec.aspx");
         WebElement width = driver.findElement(By.id("el_f_width"));
         WebElement length = driver.findElement(By.id("el_f_lenght"));
@@ -31,19 +32,22 @@ public class SmokeTestHW {
         width.sendKeys("4");
         length.sendKeys("5");
         selectRoom.selectByValue("2");
+        Thread.sleep(2000);
         selectTypeOfHeating.selectByIndex(2);
+        Thread.sleep(2000);
         heatLoss.sendKeys("1200");
         button.click();
 
         WebElement heatingCableOrMatPower = driver.findElement(By.id("floor_cable_power"));
-        Assert.assertEquals(668,668);
+        heatingCableOrMatPower.click();
+        Assert.assertEquals(heatingCableOrMatPower.getAttribute("value"), "668");
         WebElement specificPowerOfHeatingCableOrMat = driver.findElement(By.id("spec_floor_cable_power"));
-        Assert.assertEquals(33,33);
+        Assert.assertEquals(specificPowerOfHeatingCableOrMat.getAttribute("value"), "33");
     }
 
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
