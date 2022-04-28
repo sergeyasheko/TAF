@@ -4,10 +4,25 @@ import configuration.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import services.BrowserService;
 
-public class xPathSelectors  {
+public class xPathSelectors {
     private WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+
+        driver = new BrowserService().getDriver();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+
+        driver.quit();
+    }
 
     @Test
     public void basicXPathSelectors() {

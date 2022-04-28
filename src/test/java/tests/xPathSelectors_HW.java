@@ -26,55 +26,57 @@ public class xPathSelectors_HW {
 
     @Test
     public void basicXPathSelectors() {
-        driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.xpath("//*[@id = 'user-name']")).sendKeys("standard_user");
-        driver.findElement(By.xpath("//*[@id = 'password']")).sendKeys("secret_sauc");
-        driver.findElement(By.xpath("//*[@id = 'login-button']")).click();
+        driver.get("https://kermi-fko.ru/");
+        driver.findElement(By.xpath("//*[@class = 'el_form btn btn_green']")).click();
 
         // Абсолютный xpath
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/div[2]/span")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/form/div[3]/div[2]/table/tbody/tr/td/div[1]/div/div[1]/div/ul[1]/li[1]")).isDisplayed());
 
         // Все эелемнты на странице начиная с HTML
         driver.findElements(By.xpath("//*"));
 
         // Аналог поиска по tagName
-        Assert.assertTrue(driver.findElement(By.xpath("//span")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//tr")).isDisplayed());
 
-        // Аналог родительского div и на один уровень ниже р1
-        Assert.assertTrue(driver.findElement(By.xpath("//div/h1")).isDisplayed());
+        // Аналог родительского table и на один уровень ниже tbody
+        Assert.assertTrue(driver.findElement(By.xpath("//table/tbody")).isDisplayed());
 
         // Аналог родительского div и на любом уровене ниже div
-        Assert.assertTrue(driver.findElement(By.xpath("//div//div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li//i")).isDisplayed());
 
-        // Поиск элемента с тэгом div у которого есть аьттрибут id
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@id]")).isDisplayed());
+        // Поиск элемента с тэгом span у которого есть атрибут class
+        Assert.assertTrue(driver.findElement(By.xpath("//a[@href]")).isDisplayed());
 
-        // Поиск элемента у которого есть аттрибут id cо значением top-logo
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id = 'top-logo']")).isDisplayed());
+        // Поиск элемента с тэгом span у которого есть атрибут id
+        Assert.assertTrue(driver.findElement(By.xpath("//span[@id]")).isDisplayed());
 
-        // Поиск элемента у которого есть аттрибут method cо значением и фттрибут target со значением
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@method='post' and @target='_blank']")).isDisplayed());
+        // Поиск элемента у которого есть аттрибут class cо значением support-number
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class = 'support-number']")).isDisplayed());
 
-        // Поиск элемента у которого значение аттрибута начинается с
-        Assert.assertTrue(driver.findElement(By.xpath("//*[starts-with(@id, 'new')]")).isDisplayed());
+        // Поиск элемента у которого есть аттрибут id cо значением и атрибут style со значением
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id = 'ctl00_ContentUpper_ctl00_imgHeader' and @style ='border-width:0px;']")).isDisplayed());
 
-        // Поиск элемента у которого значение аттрибута содержит подстроку
-        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(@id, 'Template')]")).isDisplayed());
+        // Поиск элемента у которого есть аттрибут id cо значением или атрибут style со значением
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id = 'ctl00_ContentUpper_ctl00_imgHeader' or @style ='border-width:0px;']")).isDisplayed());
 
-        // Поиск элемента у которого текстовое значение содержит равно
-        Assert.assertTrue(driver.findElement(By.xpath("//div[text() = 'All Projects']")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath("//*[. = 'Todos']")).isDisplayed());
+        // Поиск элемента у которого значение аттрибута class начинается с agree
+        Assert.assertTrue(driver.findElement(By.xpath("//*[starts-with(@id,'ctl00_ContentUpper')]")).isDisplayed());
+        // Поиск элемента у которого значение аттрибута class содержит кусочек из подстроки со значением link
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(@class,'link')]")).isDisplayed());
+
+        // Поиск элемента у которого  tegName small и текстовое значение содержит равно
+        Assert.assertTrue(driver.findElement(By.xpath("//small[text() =' доставка в любой регион']")).isDisplayed());
 
         // Поиск элемента у которого текстовое значение содержит подстроку
-        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'All Projects')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'лицами')]")).isDisplayed());
 
         // Поиск элемента по индексу
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class = 'summary-links text-secondary']/a[2]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@id = 'workTime']/span[2]")).isDisplayed());
     }
 
     @Test
     public void axesXPathTest() {
-        driver.get(ReadProperties.getUrl());
+        driver.get("https://kermi-fko.ru/");
 
         // Поиск родителя у элемента с тэгом h1
         Assert.assertTrue(driver.findElement(By.xpath("//h1/..")).isDisplayed());
