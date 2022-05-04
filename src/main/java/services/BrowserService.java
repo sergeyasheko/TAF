@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserService {
     private WebDriver driver = null;
@@ -32,7 +34,12 @@ public class BrowserService {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        return this.driver;
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
+
+        return driver;
 
     }
 
