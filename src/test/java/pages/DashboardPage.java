@@ -11,7 +11,7 @@ public class DashboardPage extends BasePage {
     public TopMenuPage topMenuPage;
 
     // Блок описания селекторов для элементов
-    private By headerTitleLabelLocator = By.xpath("//div[contains(@class, 'content-header-title') and contains(text(), 'All Projects')]");
+    private By headerTitleLabelLocator = By.cssSelector(".content-header-title");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
