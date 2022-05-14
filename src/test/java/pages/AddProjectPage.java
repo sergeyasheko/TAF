@@ -1,0 +1,24 @@
+package pages;
+
+import baseEntities.BasePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class AddProjectPage extends BasePage {
+
+    private final static String pagePath = "/index.php?/admin/projects/add/1";
+    private By allProjectPageLocator = By.cssSelector(".content-header-title"); //локатор страницы
+    private By projectNameLocator = By.id("name");   // локатор поля имя
+    private By addProjectButtonLocator = By.cssSelector("#accept.button"); // локатор кнопки создать проект
+
+    public AddProjectPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @Override
+    protected By getPageIdentifier() {return allProjectPageLocator; }
+
+    public WebElement getProjectName(){return driver.findElement(projectNameLocator);}
+    public WebElement getAddProjectButton(){return driver.findElement(addProjectButtonLocator);}
+}
