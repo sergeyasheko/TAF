@@ -8,7 +8,7 @@ import pages.SideMenuPage;
 
 public class AddProjectStep extends BaseStep {
 
-    public String name = "QA18";
+    public String projectName = "QA18";
 
     public AddProjectStep(WebDriver driver) {
         super(driver);
@@ -17,13 +17,13 @@ public class AddProjectStep extends BaseStep {
 
     // нажатие кнопки Add project
     public AddProjectPage addProjectButton() {
-        sideMenuPage.getAddProjectButton().click();
+       dashboardPage.getAddProjectButton().click();
         return addProjectPage;
     }
 
     // создание проекта заполнение имени и нажатие кнопки создать
     public ProjectsPage addProject(String name) {
-        addProjectPage.getProjectName().sendKeys(name);
+        addProjectPage.getProjectName().sendKeys(projectName);
         addProjectPage.getAddProjectButton().click();
         return projectsPage;
 
