@@ -8,10 +8,12 @@ import org.testng.annotations.Test;
 public class AddProjectTest extends BaseTest {
 
     @Test
-    public void successAddProjectTest(){
+    public void successAddProjectTest() throws InterruptedException {
 
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password()).isPageOpened();
-        Assert.assertTrue(addProjectStep.addProject("QA18").isPageOpened());
+        addProjectStep.addProjectButton().isPageOpened();
+        addProjectStep.addProject().isPageOpened(); //создан проект QA18
+        navigationStep.navigateToDashboardPage();
 
     }
 }

@@ -9,7 +9,7 @@ public class AddProjectPage extends BasePage {
 
     private final static String pagePath = "/index.php?/admin/projects/add/1";
     private By allProjectPageLocator = By.cssSelector(".content-header-title"); //локатор страницы
-    private By projectNameLocator = By.id("name");   // локатор поля имя
+    private By projectNameInputLocator = By.cssSelector("#name.form-control ");   // локатор поля имя
     private By addProjectButtonLocator = By.cssSelector("#accept.button"); // локатор кнопки создать проект
 
     public AddProjectPage(WebDriver driver) {
@@ -19,6 +19,6 @@ public class AddProjectPage extends BasePage {
     @Override
     protected By getPageIdentifier() {return allProjectPageLocator; }
 
-    public WebElement getProjectName(){return driver.findElement(projectNameLocator);}
+    public WebElement getProjectName(){return driver.findElement(projectNameInputLocator);}
     public WebElement getAddProjectButton(){return driver.findElement(addProjectButtonLocator);}
 }

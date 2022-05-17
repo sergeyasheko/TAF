@@ -17,12 +17,12 @@ public class AddProjectStep extends BaseStep {
 
     // нажатие кнопки Add project
     public AddProjectPage addProjectButton() {
-       dashboardPage.getAddProjectButton().click();
+       sideMenuPage.getAddProjectButton().click();
         return addProjectPage;
     }
 
     // создание проекта заполнение имени и нажатие кнопки создать
-    public ProjectsPage addProject(String name) {
+    public ProjectsPage addProject() {
         addProjectPage.getProjectName().sendKeys(projectName);
         addProjectPage.getAddProjectButton().click();
         return projectsPage;
