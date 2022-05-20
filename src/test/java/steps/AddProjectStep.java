@@ -2,9 +2,7 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.AddProjectPage;
-import pages.ProjectsPage;
-import pages.SideMenuPage;
+import pages.NewProjectPage;
 
 public class AddProjectStep extends BaseStep {
 
@@ -15,17 +13,12 @@ public class AddProjectStep extends BaseStep {
 
     }
 
-    // нажатие кнопки Add project
-    public AddProjectPage addProjectButton() {
-       sideMenuPage.getAddProjectButton().click();
-        return addProjectPage;
-    }
-
     // создание проекта заполнение имени и нажатие кнопки создать
-    public ProjectsPage addProject() {
-        addProjectPage.getProjectName().sendKeys(projectName);
-        addProjectPage.getAddProjectButton().click();
-        return projectsPage;
 
+    public NewProjectPage addNewProject(String projectName) {
+        addProjectPage.getProjectNameInput().sendKeys(projectName);
+        addProjectPage.getAddProjectButton().click();
+        return newProjectPage;
     }
+
 }
