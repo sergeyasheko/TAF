@@ -30,7 +30,7 @@ public class NavigationStep extends BaseStep {
         return newProjectPage;
     }
 
-    public MilestonesPage navigateToMilestonePage() {
+    public MilestonesPage navigateToMilestonesPage() {
         milestonesPage.openPageByUrl();
         return milestonesPage;
     }
@@ -38,5 +38,10 @@ public class NavigationStep extends BaseStep {
     public AddMilestonePage navigateToAddMilestonesPage() {
         addMilestonePage.openPageByUrl();
         return addMilestonePage;
+    }
+
+    public NewMilestonePage navigateToNewMilestonesPage() {
+        newMilestonePage.openPageByUrl();
+        return newMilestonePage;
     }
 }

@@ -11,6 +11,7 @@ public class AddMilestonePage extends BasePage {
     private By nameMilestoneInputLocator = By.cssSelector(".form-control#name");
     private By addNewMilestoneButtonLocator = By.cssSelector("#accept.button");
 
+
     public AddMilestonePage(WebDriver driver) {
         super(driver);
     }
@@ -26,4 +27,5 @@ public class AddMilestonePage extends BasePage {
 
     public WebElement getNameMilestoneInput(){return  driver.findElement(nameMilestoneInputLocator);}
     public WebElement getAddNewMilestoneButton(){return  driver.findElement(addNewMilestoneButtonLocator);}
+
 }
