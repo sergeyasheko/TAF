@@ -2,13 +2,14 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 public class MilestonesTest extends BaseTest {
 
-    @Test
+    @Test(description = "Создание майлстона")
     public void addNewMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddMilestonesPage();
@@ -16,6 +17,7 @@ public class MilestonesTest extends BaseTest {
     }
 
     @Test(dependsOnMethods = "addNewMilestoneTest")
+    @Description("Читаем наш майлстон")
     public void readMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToNewMilestonesPage();
