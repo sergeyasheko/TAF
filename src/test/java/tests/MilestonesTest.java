@@ -33,7 +33,7 @@ public class MilestonesTest extends BaseTest {
     public void deleteMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
-        Assert.assertTrue(milestonesStep.deleteNewMilestone().getSuccessfullyDeleteMessage().isDisplayed());
+        Assert.assertTrue(milestonesStep.deleteNewMilestone().isPageOpened());
 
     }
     }

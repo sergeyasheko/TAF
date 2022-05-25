@@ -11,7 +11,7 @@ public class MilestonesPage extends BasePage {
     private By milestonesPageLocator = By.cssSelector(".content-header-title.page_title");
     private By addMilestoneButtonLocator = By.cssSelector("div.button-group>a.button.button-left.button-add");
     private By successMessageMilestoneLocator = By.cssSelector(".message.message-success");
-    private By editNewMilestoneLocator = By.xpath("//*[@href='index.php?/milestones/edit/40']");
+    private By editNewMilestoneLocator = By.xpath("//*[@href='index.php?/milestones/edit/44']");
     private By successfullyUpdatedMessageLocator = By.cssSelector(".message.message-success");
     private By deleteNewMilestoneLocator = By.cssSelector(".icon-small-delete ");
     private By successfullyDeleteMessageLocator = By.cssSelector("message message-success");
