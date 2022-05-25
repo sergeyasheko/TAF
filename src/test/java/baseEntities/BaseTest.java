@@ -4,14 +4,17 @@ import configuration.ReadProperties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import services.BrowserService;
 import steps.AddProjectStep;
 import steps.LoginStep;
 import steps.MilestonesStep;
 import steps.NavigationStep;
+import utils.Listener;
 
+@Listeners(Listener.class)
 public class BaseTest {
-    protected WebDriver driver;
+    public WebDriver driver;
     protected LoginStep loginStep;
     protected NavigationStep navigationStep;
     protected AddProjectStep addProjectStep;

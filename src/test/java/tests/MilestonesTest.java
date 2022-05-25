@@ -2,14 +2,16 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
+@Epic("Тестирование нового майлстона")
+@Feature("CRUD Milestone")
 public class MilestonesTest extends BaseTest {
 
     @Test(description = "Создание майлстона")
+    @Severity(SeverityLevel.BLOCKER)
     public void addNewMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddMilestonesPage();
@@ -18,6 +20,8 @@ public class MilestonesTest extends BaseTest {
 
     @Test(dependsOnMethods = "addNewMilestoneTest")
     @Description("Читаем наш майлстон")
+    @Link("https://example.org")
+    @Link(name = "readMilestone", type = "milestone", url = "https://av.by")
     public void readMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToNewMilestonesPage();
@@ -25,6 +29,8 @@ public class MilestonesTest extends BaseTest {
     }
 
     @Test(dependsOnMethods = "readMilestoneTest")
+    @Story("Редактирование майлстона")
+    @TmsLink("id-18")  // указывает в каком  тест-кейс
     public void editMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
@@ -32,6 +38,8 @@ public class MilestonesTest extends BaseTest {
         Assert.assertTrue(milestonesStep.openUpdateMessage().getSuccessfullyUpdatedMessage().isDisplayed());
     }
     @Test(dependsOnMethods = "editMilestoneTest")
+    @Story("Удаление майлстона")
+    @Issue("ABC-123")                           // если есть дефект,  с указанием бага
     public void deleteMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
