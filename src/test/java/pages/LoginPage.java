@@ -32,4 +32,4 @@ public class LoginPage extends BasePage {
     // Блок атомарных методов
 
 
-  }
+}

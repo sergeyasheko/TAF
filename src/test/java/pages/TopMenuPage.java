@@ -1,12 +1,13 @@
 package pages;
 
 import baseEntities.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class TopMenuPage extends BasePage {
-    private By topPanelLocator = By.className("top-panel");
+    @FindBy(className = "top-panel")
+    public WebElement topPanel;
 
     public TopMenuPage(WebDriver driver) {
         super(driver);
@@ -14,6 +15,7 @@ public class TopMenuPage extends BasePage {
 
     @Override
     protected WebElement getPageIdentifier() {
-        return driver.findElement(topPanelLocator);
+
+        return topPanel;
     }
 }
