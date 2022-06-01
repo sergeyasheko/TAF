@@ -8,21 +8,21 @@ import org.testng.annotations.Test;
 
 public class MilestonesTest extends BaseTest {
 
-    @Test(priority = 1)
+    @Test
     public void addNewMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddMilestonesPage();
         Assert.assertTrue(milestonesStep.addNewMilestone("first").getSuccessMessageMilestone().isDisplayed());
     }
 
-    @Test(dependsOnMethods = "addNewMilestoneTest", priority = 2)
+    @Test(dependsOnMethods = "addNewMilestoneTest")
     public void readMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToNewMilestonesPage();
         Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
     }
 
-    @Test(dependsOnMethods = "addNewMilestoneTest", priority = 3)
+    @Test(dependsOnMethods = "addNewMilestoneTest")
     public void editMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToMilestonesPage();

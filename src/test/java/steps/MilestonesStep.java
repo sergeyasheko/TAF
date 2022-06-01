@@ -8,6 +8,7 @@ import pages.NewMilestonePage;
 
 public class MilestonesStep extends BaseStep {
     public String milestoneName = "first";
+    public String newReferenceName = "T42";
 
 
     public MilestonesStep(WebDriver driver) {
@@ -28,7 +29,7 @@ public class MilestonesStep extends BaseStep {
     public MilestonesPage editMilestone() {
         milestonesPage.getEditNewMilestone().click();
         newMilestonePage.getReferencesInput().clear();
-        newMilestonePage.getReferencesInput().sendKeys("T42");
+        newMilestonePage.getReferencesInput().sendKeys(newReferenceName);
         newMilestonePage.getSaveMilestoneButton().click();
         return milestonesPage;
     }
