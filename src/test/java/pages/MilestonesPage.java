@@ -32,30 +32,30 @@ public class MilestonesPage extends BasePage {
     }
 
     public WebElement getAddMilestoneButton() {
-        return driver.findElement(addMilestoneButtonLocator);
+        return waitsService.waitForExists(addMilestoneButtonLocator);
     }
 
     public WebElement getSuccessMessageMilestone() {
-        return driver.findElement(successMessageMilestoneLocator);
+        return waitsService.waitForExists(successMessageMilestoneLocator);
     }
 
     public WebElement getEditNewMilestone() {
-        return driver.findElement(editNewMilestoneLocator);
+        return waitsService.waitForExists(editNewMilestoneLocator);
     }
 
     public WebElement getSuccessfullyUpdatedMessage() {
-        return driver.findElement(successfullyUpdatedMessageLocator);
+        return waitsService.waitForExists(successfullyUpdatedMessageLocator);
     }
 
     public WebElement getDeleteNewMilestone() {
-        return driver.findElement(deleteNewMilestoneLocator);
+        return waitsService.waitForExists(deleteNewMilestoneLocator);
     }
 
     public WebElement getSuccessfullyDeleteMessage() {
-        return driver.findElement(successfullyDeleteMessageLocator);
+        return waitsService.waitForExists(successfullyDeleteMessageLocator);
     }
 
     public WebElement getConfirmationDeleteButton() {
-        return driver.findElement(confirmationDeleteButtonLocator);
+        return waitsService.waitForExists(confirmationDeleteButtonLocator);
     }
 }

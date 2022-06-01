@@ -24,6 +24,6 @@ public class NewProjectPage extends BasePage {
     }
 
     public WebElement getSuccessMessage() {
-        return driver.findElement(successMessageLocator);
+        return waitsService.waitForExists(successMessageLocator);
     }
 }

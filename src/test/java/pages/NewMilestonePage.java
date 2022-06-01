@@ -26,15 +26,15 @@ public class NewMilestonePage extends BasePage {
     }
 
     public WebElement getNewMilestonesPage() {
-        return driver.findElement(newMilestonesPageLocator);
+        return waitsService.waitForExists(newMilestonesPageLocator);
     }
 
     public WebElement getReferencesInput() {
-        return driver.findElement(referencesInputLocator);
+        return waitsService.waitForExists(referencesInputLocator);
     }
 
     public WebElement getSaveMilestoneButton() {
-        return driver.findElement(saveMilestoneButtonLocator);
+        return waitsService.waitForExists(saveMilestoneButtonLocator);
     }
 
 }

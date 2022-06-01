@@ -26,11 +26,11 @@ public class AddMilestonePage extends BasePage {
     }
 
     public WebElement getNameMilestoneInput() {
-        return driver.findElement(nameMilestoneInputLocator);
+        return waitsService.waitForExists(nameMilestoneInputLocator);
     }
 
     public WebElement getAddNewMilestoneButton() {
-        return driver.findElement(addNewMilestoneButtonLocator);
+        return waitsService.waitForExists(addNewMilestoneButtonLocator);
     }
 
 }
