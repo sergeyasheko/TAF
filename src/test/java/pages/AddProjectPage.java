@@ -19,12 +19,19 @@ public class AddProjectPage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {return allProjectPageLocator; }
+    protected By getPageIdentifier() {
+        return allProjectPageLocator;
+    }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getProjectNameInput(){return driver.findElement(projectNameInputLocator);}
-    public WebElement getAddProjectButton(){return driver.findElement(addProjectButtonLocator);}
+    public WebElement getProjectNameInput() {
+        return driver.findElement(projectNameInputLocator);
+    }
+
+    public WebElement getAddProjectButton() {
+        return driver.findElement(addProjectButtonLocator);
+    }
 }

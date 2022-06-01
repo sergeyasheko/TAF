@@ -9,6 +9,7 @@ import pages.NewMilestonePage;
 public class MilestonesStep extends BaseStep {
     public String milestoneName = "first";
 
+
     public MilestonesStep(WebDriver driver) {
         super(driver);
     }
@@ -19,12 +20,12 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
-    public NewMilestonePage readNewMilestone() {
+    public NewMilestonePage readMilestone() {
         newMilestonePage.getNewMilestonesPage();
         return newMilestonePage;
     }
 
-    public MilestonesPage editNewMilestone(){
+    public MilestonesPage editMilestone() {
         milestonesPage.getEditNewMilestone().click();
         newMilestonePage.getReferencesInput().clear();
         newMilestonePage.getReferencesInput().sendKeys("T42");
@@ -32,16 +33,18 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
-    public MilestonesPage openUpdateMessage(){
-        editNewMilestone().getSuccessfullyUpdatedMessage();
+    public MilestonesPage openUpdateMessage() {
+        editMilestone().getSuccessfullyUpdatedMessage();
         return milestonesPage;
     }
-    public MilestonesPage deleteNewMilestone(){
+
+    public MilestonesPage deleteNewMilestone() {
         milestonesPage.getDeleteNewMilestone().click();
         milestonesPage.getConfirmationDeleteButton().click();
         return milestonesPage;
     }
-    public MilestonesPage openDeleteMessage(){
+
+    public MilestonesPage openDeleteMessage() {
         deleteNewMilestone().getSuccessfullyDeleteMessage();
         return milestonesPage;
     }

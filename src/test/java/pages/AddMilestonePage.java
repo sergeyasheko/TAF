@@ -25,7 +25,12 @@ public class AddMilestonePage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getNameMilestoneInput(){return  driver.findElement(nameMilestoneInputLocator);}
-    public WebElement getAddNewMilestoneButton(){return  driver.findElement(addNewMilestoneButtonLocator);}
+    public WebElement getNameMilestoneInput() {
+        return driver.findElement(nameMilestoneInputLocator);
+    }
+
+    public WebElement getAddNewMilestoneButton() {
+        return driver.findElement(addNewMilestoneButtonLocator);
+    }
 
 }

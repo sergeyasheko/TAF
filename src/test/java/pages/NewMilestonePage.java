@@ -18,15 +18,23 @@ public class NewMilestonePage extends BasePage {
 
     @Override
     protected By getPageIdentifier() {
-        return newMilestonesPageLocator ;
+        return newMilestonesPageLocator;
     }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getNewMilestonesPage(){return driver.findElement(newMilestonesPageLocator);}
-        public WebElement getReferencesInput(){return  driver.findElement(referencesInputLocator);}
-    public WebElement getSaveMilestoneButton(){return  driver.findElement(saveMilestoneButtonLocator);}
+    public WebElement getNewMilestonesPage() {
+        return driver.findElement(newMilestonesPageLocator);
+    }
+
+    public WebElement getReferencesInput() {
+        return driver.findElement(referencesInputLocator);
+    }
+
+    public WebElement getSaveMilestoneButton() {
+        return driver.findElement(saveMilestoneButtonLocator);
+    }
 
 }

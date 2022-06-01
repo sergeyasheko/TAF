@@ -31,11 +31,31 @@ public class MilestonesPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getAddMilestoneButton(){return driver.findElement(addMilestoneButtonLocator);}
-    public WebElement getSuccessMessageMilestone(){return driver.findElement(successMessageMilestoneLocator);}
-    public WebElement getEditNewMilestone(){return driver.findElement(editNewMilestoneLocator);}
-    public WebElement getSuccessfullyUpdatedMessage(){return driver.findElement(successfullyUpdatedMessageLocator);}
-    public WebElement getDeleteNewMilestone(){return driver.findElement(deleteNewMilestoneLocator);}
-    public WebElement getSuccessfullyDeleteMessage(){return driver.findElement(successfullyDeleteMessageLocator);}
-    public WebElement getConfirmationDeleteButton(){return driver.findElement(confirmationDeleteButtonLocator);}
+    public WebElement getAddMilestoneButton() {
+        return driver.findElement(addMilestoneButtonLocator);
+    }
+
+    public WebElement getSuccessMessageMilestone() {
+        return driver.findElement(successMessageMilestoneLocator);
+    }
+
+    public WebElement getEditNewMilestone() {
+        return driver.findElement(editNewMilestoneLocator);
+    }
+
+    public WebElement getSuccessfullyUpdatedMessage() {
+        return driver.findElement(successfullyUpdatedMessageLocator);
+    }
+
+    public WebElement getDeleteNewMilestone() {
+        return driver.findElement(deleteNewMilestoneLocator);
+    }
+
+    public WebElement getSuccessfullyDeleteMessage() {
+        return driver.findElement(successfullyDeleteMessageLocator);
+    }
+
+    public WebElement getConfirmationDeleteButton() {
+        return driver.findElement(confirmationDeleteButtonLocator);
+    }
 }

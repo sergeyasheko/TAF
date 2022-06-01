@@ -18,8 +18,12 @@ public class NewProjectPage extends BasePage {
     protected By getPageIdentifier() {
         return successMessageLocator;
     }
+
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
-    public WebElement getSuccessMessage(){return driver.findElement(successMessageLocator);}
+
+    public WebElement getSuccessMessage() {
+        return driver.findElement(successMessageLocator);
+    }
 }

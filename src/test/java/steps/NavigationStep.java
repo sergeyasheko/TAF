@@ -15,12 +15,12 @@ public class NavigationStep extends BaseStep {
         return projectsPage;
     }
 
-    public AddProjectPage navigateToAddProjectPage(){
+    public AddProjectPage navigateToAddProjectPage() {
         addProjectPage.openPageByUrl();
         return addProjectPage;
     }
 
-    public DashboardPage navigateToDashboardPage(){
+    public DashboardPage navigateToDashboardPage() {
         dashboardPage.openPageByUrl();
         return dashboardPage;
     }
