@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class BrowserService {
     private WebDriver driver = null;
@@ -21,7 +20,8 @@ public class BrowserService {
                 driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
 
-                driver = new ChromeDriver(getChromeOptions());
+                //driver = new ChromeDriver(getChromeOptions());
+                driver = new ChromeDriver();
                 break;
             case "firefox":
                 break;
