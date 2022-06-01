@@ -22,12 +22,12 @@ public class MilestonesTest extends BaseTest {
         Assert.assertTrue(milestonesStep.readNewMilestone().getNewMilestonesPage().isDisplayed());
     }
 
-    @Test(dependsOnMethods = "readMilestoneTest")
+    @Test(dependsOnMethods = "addNewMilestoneTest")
     public void editMilestoneTest(){
         loginStep.successLogin(ReadProperties.username(),ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
         milestonesStep.editNewMilestone();
-        Assert.assertTrue(milestonesStep.openUpdateMessage().getSuccessfullyUpdatedMessage().isDisplayed());
+        Assert.assertTrue(milestonesStep.editNewMilestone().getSuccessfullyUpdatedMessage().isDisplayed());
     }
     @Test(dependsOnMethods = "editMilestoneTest")
     public void deleteMilestoneTest(){
