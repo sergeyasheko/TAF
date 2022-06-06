@@ -24,7 +24,7 @@ public class DynamicControlsTest extends BaseTest {
         actions.moveToElement(buttonRemove).click().build().perform();
 
         WebElement title = wait.waitForVisibilityLocatedBy(By.xpath("//p[@id='message']"));
-        Assert.assertEquals(title.getText(),"It's gone!");
+        Assert.assertEquals(title.getText(), "It's gone!");
 
         Assert.assertTrue(wait.waitForElementInvisible(checkBox));
 
@@ -43,7 +43,7 @@ public class DynamicControlsTest extends BaseTest {
         actions.moveToElement(buttonSwapInput).click().build().perform();
 
         WebElement title = wait.waitForVisibilityLocatedBy(By.xpath("//p[@id='message']"));
-        Assert.assertEquals(title.getText(),"It's enabled!");
+        Assert.assertEquals(title.getText(), "It's enabled!");
 
         actions.moveToElement(inputField).click().build().perform();
         Assert.assertTrue(inputField.isEnabled());
