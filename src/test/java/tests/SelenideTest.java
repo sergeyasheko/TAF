@@ -155,7 +155,7 @@ public class SelenideTest {
 
         $("#announcement")
                 .shouldHave(text("Expected Text"))   //проверка на ожидаемый текст, аналог contains
-                .shouldHave(matchText("Expected Text"))  // сверка с текстом с шаблона, который нужно прописать где-нибудь
+                .shouldHave(matchText("Expected Text"))  // сверка с текстом с шаблона, который нужно прописать где-нибудь, regex
                 .shouldHave(exactText(""))  //проверка на текст полностью с пробелами и т.д., аналог equalsIgnoreCase
                 .shouldHave(textCaseSensitive("Expected Result Text")) // проверка текста с учетом регистра
                 .shouldHave(exactTextCaseSensitive("Expected Result Text"));  // проверка текста с учетом регистра и всех символов, аналог equals
