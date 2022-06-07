@@ -3,7 +3,6 @@ package tests;
 import baseEntities.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import services.WaitsService;
 
@@ -16,7 +15,7 @@ public class ActionsTest extends BaseTest {
     public void hoverTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/hovers");
 
-        Actions actions = new Actions(driver);
+
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
 
         List<WebElement> targetElement = wait.waitForAllVisibleElementsLocatedBy(By.cssSelector(".figure"));

@@ -51,6 +51,7 @@ public class WaitsService {
         return fluent.until(driver1 -> driver.findElement(locator));
 
     }
+
 }
 
 
