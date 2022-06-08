@@ -19,14 +19,13 @@ public class MilestonesTest extends BaseTest {
     public void readMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
-        Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
+        Assert.assertTrue(milestonesStep.readMilestone().isPageOpened());
     }
 
     @Test(dependsOnMethods = "addNewMilestoneTest")
     public void editMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
-        milestonesStep.editMilestone();
         Assert.assertTrue(milestonesStep.editMilestone().getSuccessfullyUpdatedMessage().isDisplayed());
     }
 

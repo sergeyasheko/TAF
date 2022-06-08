@@ -63,5 +63,17 @@ public class MilestonesPage extends BasePage {
     }
 
     // Блок комплексных методов
+    public MilestonesPage readMilestone() {
+        getReadMilestone().click();
+        return  new MilestonesPage(driver);
+    }
+
+    public MilestonesPage deleteNewMilestone() {
+        getDeleteNewMilestone().click();
+        getConfirmationDeleteButton().click();
+        return  new MilestonesPage(driver);
+    }
+
+
 
 }

@@ -3,7 +3,6 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.MilestonesPage;
-import pages.NewMilestonePage;
 
 
 public class MilestonesStep extends BaseStep {
@@ -21,9 +20,9 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
-    public NewMilestonePage readMilestone() {
+    public MilestonesPage readMilestone() {
         milestonesPage.getReadMilestone().click();
-        return newMilestonePage;
+        return milestonesPage;
     }
 
     public MilestonesPage editMilestone() {
