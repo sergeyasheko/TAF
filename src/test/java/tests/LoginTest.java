@@ -4,17 +4,15 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.DashboardPage;
 import pages.LoginPage;
-import steps.LoginStep;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void successLoginTest() {
-        Assert.assertTrue(
-                loginStep.successLogin(ReadProperties.username(), ReadProperties.password()).isPageOpened()
-        );
+             Assert.assertTrue(new LoginPage(driver).successLogin("atrostyanko@gmail.com", "Americana#1")
+                      .openProject("QA18")
+                      .getTabByName("aada").isDisplayed());
     }
 
     @Test

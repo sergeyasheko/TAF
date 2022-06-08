@@ -33,4 +33,8 @@ public class DashboardPage extends BasePage {
         return driver.findElement(headerTitleLabelLocator);
     }
 
+    // Блок комплексных методов
+    public ProjectsOverviewPage openProject(String projectName) {
+    // ToDo: implement actions
+        return new ProjectsOverviewPage(driver);}
 }

@@ -37,4 +37,5 @@ public class NewMilestonePage extends BasePage {
         return driver.findElement(saveMilestoneButtonLocator);
     }
 
+    // Блок комплексных методов
 }

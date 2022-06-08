@@ -58,4 +58,6 @@ public class MilestonesPage extends BasePage {
     public WebElement getConfirmationDeleteButton() {
         return driver.findElement(confirmationDeleteButtonLocator);
     }
+
+    // Блок комплексных методов
 }
