@@ -4,9 +4,6 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.DashboardPage;
-import pages.LoginPage;
-import steps.LoginStep;
 
 public class LoginTest extends BaseTest {
 
@@ -20,7 +17,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectEmailLoginTest() {
         Assert.assertEquals(
-                loginStep.incorrectLogin("sdsd", ReadProperties.password()).getErrorTextElement().getText(),
+                loginStep.incorrectLogin("sdsd", ReadProperties.password()).errorText.getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }
@@ -28,7 +25,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectPswLoginTest() {
         Assert.assertEquals(
-                loginStep.incorrectLogin(ReadProperties.username(), "123").getErrorTextElement().getText(),
+                loginStep.incorrectLogin(ReadProperties.username(), "123").errorText.getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }

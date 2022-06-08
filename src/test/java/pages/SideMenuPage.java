@@ -1,25 +1,25 @@
 package pages;
 
 import baseEntities.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SideMenuPage extends BasePage {
-    private By sidebarLocator = By.id("sidebar");
-    private By addProjectButtonLocator = By.id("sidebar-projects-add");
+    @FindBy(id = "sidebar")
+    public WebElement sidebar;
+
+    @FindBy(id = "sidebar-projects-add")
+    public WebElement addProjectButton;
 
     public SideMenuPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return sidebarLocator;
+    protected WebElement getPageIdentifier() {
+        return sidebar;
     }
 
-    public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectButtonLocator); // кнопка создать новый проект
-    }
 }
 

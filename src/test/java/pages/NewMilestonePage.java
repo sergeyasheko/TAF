@@ -1,15 +1,21 @@
 package pages;
 
 import baseEntities.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class NewMilestonePage extends BasePage {
     private final static String pagePath = "/index.php?/milestones/edit/22";
-    private By newMilestonesPageLocator = By.cssSelector(".content-header-title.page_title");
-    private By referencesInputLocator = By.cssSelector("#reference");
-    private By saveMilestoneButtonLocator = By.cssSelector("#accept");
+
+    @FindBy(css = ".content-header-title.page_title")
+    public WebElement newMilestonesPage;
+
+    @FindBy(css = "#reference")
+    public WebElement referencesInput;
+
+    @FindBy(css = "#accept")
+    public WebElement saveMilestoneButton;
 
 
     public NewMilestonePage(WebDriver driver) {
@@ -17,24 +23,11 @@ public class NewMilestonePage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return newMilestonesPageLocator;
+    protected WebElement getPageIdentifier() {
+        return newMilestonesPage;
     }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
-
-    public WebElement getNewMilestonesPage() {
-        return driver.findElement(newMilestonesPageLocator);
-    }
-
-    public WebElement getReferencesInput() {
-        return driver.findElement(referencesInputLocator);
-    }
-
-    public WebElement getSaveMilestoneButton() {
-        return driver.findElement(saveMilestoneButtonLocator);
-    }
-
 }

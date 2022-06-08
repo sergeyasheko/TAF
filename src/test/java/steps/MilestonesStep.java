@@ -16,39 +16,38 @@ public class MilestonesStep extends BaseStep {
     }
 
     public MilestonesPage addNewMilestone(String milestoneName) {
-        addMilestonePage.getNameMilestoneInput().sendKeys(milestoneName);
-        addMilestonePage.getAddNewMilestoneButton().click();
+        addMilestonePage.nameMilestoneInput.sendKeys(milestoneName);
+        addMilestonePage.addNewMilestoneButton.click();
         return milestonesPage;
     }
 
     public NewMilestonePage readMilestone() {
-        newMilestonePage.getNewMilestonesPage();
+      //  newMilestonePage.getNewMilestonesPage();
         return newMilestonePage;
     }
 
     public MilestonesPage editMilestone() {
-        milestonesPage.getEditNewMilestone().click();
-        newMilestonePage.getReferencesInput().clear();
-        newMilestonePage.getReferencesInput().sendKeys(newReferenceName);
-        newMilestonePage.getSaveMilestoneButton().click();
+        milestonesPage.editMilestone.click();
+        newMilestonePage.referencesInput.clear();
+        newMilestonePage.referencesInput.sendKeys(newReferenceName);
+        newMilestonePage.saveMilestoneButton.click();
         return milestonesPage;
     }
 
-    public MilestonesPage openUpdateMessage() {
-        editMilestone().getSuccessfullyUpdatedMessage();
-        return milestonesPage;
-    }
+//    public MilestonesPage openUpdateMessage() {
+//        editMilestone().getSuccessfullyUpdatedMessage();
+//        return milestonesPage;
+//    }
 
     public MilestonesPage deleteNewMilestone() {
-        milestonesPage.getDeleteNewMilestone().click();
-        milestonesPage.getConfirmationDeleteButton().click();
+        milestonesPage.deleteMilestone.click();
+        milestonesPage.confirmationDeleteButton.click();
         return milestonesPage;
     }
 
-    public MilestonesPage openDeleteMessage() {
-        deleteNewMilestone().getSuccessfullyDeleteMessage();
-        return milestonesPage;
-    }
-
+//    public MilestonesPage openDeleteMessage() {
+//        deleteNewMilestone().getSuccessfullyDeleteMessage();
+//        return milestonesPage;
+//    }
 
 }

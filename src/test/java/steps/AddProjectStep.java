@@ -16,8 +16,8 @@ public class AddProjectStep extends BaseStep {
     // создание проекта заполнение имени и нажатие кнопки создать
 
     public NewProjectPage addNewProject(String projectName) {
-        addProjectPage.getProjectNameInput().sendKeys(projectName);
-        addProjectPage.getAddProjectButton().click();
+        addProjectPage.projectNameInput.sendKeys(projectName);
+        addProjectPage.addProjectButton.click();
         return newProjectPage;
     }
 

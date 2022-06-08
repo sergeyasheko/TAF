@@ -11,7 +11,7 @@ public class AddProjectTest extends BaseTest {
     public void addNewProjectTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddProjectPage();
-        Assert.assertTrue(addProjectStep.addNewProject("QA18").getSuccessMessage().isDisplayed());
+        Assert.assertTrue(addProjectStep.addNewProject("QA18").successMessage.isDisplayed());
 
     }
 
