@@ -34,4 +34,9 @@ public class AddMilestonePage extends BasePage {
     }
 
     // Блок комплексных методов
+    public MilestonesPage addNewMilestone(String milestoneName) {
+        getNameMilestoneInput().sendKeys(milestoneName);
+        getAddNewMilestoneButton().click();
+        return new MilestonesPage(driver);
+    }
 }

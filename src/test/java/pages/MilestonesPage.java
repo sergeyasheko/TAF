@@ -60,4 +60,5 @@ public class MilestonesPage extends BasePage {
     }
 
     // Блок комплексных методов
+
 }
