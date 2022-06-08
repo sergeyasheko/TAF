@@ -22,7 +22,7 @@ public class MilestonesStep extends BaseStep {
     }
 
     public NewMilestonePage readMilestone() {
-        newMilestonePage.getNewMilestonesPage();
+        milestonesPage.getReadMilestone().click();
         return newMilestonePage;
     }
 

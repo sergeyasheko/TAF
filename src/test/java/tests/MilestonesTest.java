@@ -18,7 +18,7 @@ public class MilestonesTest extends BaseTest {
     @Test(dependsOnMethods = "addNewMilestoneTest")
     public void readMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        navigationStep.navigateToNewMilestonesPage();
+        navigationStep.navigateToMilestonesPage();
         Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
     }
 
