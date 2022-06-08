@@ -11,6 +11,7 @@ public class MilestonesPage extends BasePage {
     private By milestonesPageLocator = By.cssSelector(".content-header-title.page_title");
     private By addMilestoneButtonLocator = By.cssSelector("div.button-group>a.button.button-left.button-add");
     private By successMessageMilestoneLocator = By.cssSelector(".message.message-success");
+    private By readMilestoneLocator = By.xpath("//a[contains(text(), 'first')]");
     private By editNewMilestoneLocator = By.xpath("//*[contains(text(), 'Edit')]");
     private By successfullyUpdatedMessageLocator = By.xpath("//*[contains(text(),'Successfully updated the milestone.')]");
     private By deleteNewMilestoneLocator = By.cssSelector(".icon-small-delete ");
@@ -38,6 +39,8 @@ public class MilestonesPage extends BasePage {
     public WebElement getSuccessMessageMilestone() {
         return driver.findElement(successMessageMilestoneLocator);
     }
+
+    public WebElement getReadMilestone() {return  driver.findElement(readMilestoneLocator);}
 
     public WebElement getEditNewMilestone() {
         return driver.findElement(editNewMilestoneLocator);
