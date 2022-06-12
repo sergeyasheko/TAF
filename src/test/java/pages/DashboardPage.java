@@ -32,4 +32,5 @@ public class DashboardPage extends BasePage {
     public WebElement getHeaderTitleLabel() {
         return driver.findElement(headerTitleLabelLocator);
     }
+
 }

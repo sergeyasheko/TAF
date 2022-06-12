@@ -2,7 +2,7 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.ProjectsPage;
+import pages.*;
 
 public class NavigationStep extends BaseStep {
 
@@ -13,5 +13,35 @@ public class NavigationStep extends BaseStep {
     public ProjectsPage navigateToProjectsPage() {
         projectsPage.openPageByUrl();
         return projectsPage;
+    }
+
+    public AddProjectPage navigateToAddProjectPage() {
+        addProjectPage.openPageByUrl();
+        return addProjectPage;
+    }
+
+    public DashboardPage navigateToDashboardPage() {
+        dashboardPage.openPageByUrl();
+        return dashboardPage;
+    }
+
+    public NewProjectPage navigateToNewProjectPage() {
+        newProjectPage.openPageByUrl();
+        return newProjectPage;
+    }
+
+    public MilestonesPage navigateToMilestonesPage() {
+        milestonesPage.openPageByUrl();
+        return milestonesPage;
+    }
+
+    public AddMilestonePage navigateToAddMilestonesPage() {
+        addMilestonePage.openPageByUrl();
+        return addMilestonePage;
+    }
+
+    public NewMilestonePage navigateToNewMilestonesPage() {
+        newMilestonePage.openPageByUrl();
+        return newMilestonePage;
     }
 }

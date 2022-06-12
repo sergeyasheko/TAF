@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class ProjectsPage extends BasePage {
     private final static String pagePath = "/index.php?/admin/projects/overview";
+    private By ProjectTitleLabelLocator = By.xpath(".content-header-title.page_title");
 
     public SideMenuPage sideMenuPage;
 
-    private By headerTitleLabelLocator = By.xpath("//div[contains(@class, 'content-header-title') and contains(text(), 'Projects')]");
 
     public ProjectsPage(WebDriver driver) {
         super(driver);
@@ -19,10 +19,12 @@ public class ProjectsPage extends BasePage {
 
     @Override
     protected By getPageIdentifier() {
-        return headerTitleLabelLocator;
+        return ProjectTitleLabelLocator;
     }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
+
 }
+
