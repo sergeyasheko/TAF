@@ -2,16 +2,18 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import org.testng.Assert;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import wrappers.RadioButton;
 
-public class AddProjectTest extends BaseTest {
+public class RadioButtonTest extends BaseTest {
 
     @Test
-    public void addNewProjectTest() {
+    public void RadioButtonTest() throws Exception {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddProjectPage();
-        Assert.assertTrue(addProjectStep.addNewProject("QA18").getSuccessMessage().isDisplayed());
+
+        RadioButton suiteMode = new RadioButton(driver, By.name("suite_mode"));
+        suiteMode.select("3");
     }
 }
-

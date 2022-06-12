@@ -3,6 +3,7 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.NewProjectPage;
+import pages.ProjectsPage;
 
 public class AddProjectStep extends BaseStep {
 
@@ -19,6 +20,11 @@ public class AddProjectStep extends BaseStep {
         addProjectPage.getProjectNameInput().sendKeys(projectName);
         addProjectPage.getAddProjectButton().click();
         return newProjectPage;
+    }
+
+    public ProjectsPage clickMenuReports() {
+        projectsPage.getReportsButton().click();
+        return projectsPage;
     }
 
 }

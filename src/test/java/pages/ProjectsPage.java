@@ -3,10 +3,12 @@ package pages;
 import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProjectsPage extends BasePage {
     private final static String pagePath = "/index.php?/admin/projects/overview";
     private By ProjectTitleLabelLocator = By.xpath(".content-header-title.page_title");
+    private By reportsButtonLocator = By.cssSelector(".button-report");
 
     public SideMenuPage sideMenuPage;
 
@@ -26,5 +28,6 @@ public class ProjectsPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
+    public WebElement getReportsButton() {return waitsService.waitForExists(reportsButtonLocator);}
 }
 
