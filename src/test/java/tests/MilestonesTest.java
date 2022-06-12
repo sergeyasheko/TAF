@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import models.Milestone;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -36,6 +37,16 @@ public class MilestonesTest extends BaseTest {
         navigationStep.navigateToMilestonesPage();
         Assert.assertTrue(milestonesStep.deleteNewMilestone().isPageOpened());
 
+    }
+
+    @Test
+    public void addNewMilestoneBuilderTest() {
+        Milestone milestone = new Milestone
+                .Builder()
+                .withName("first")
+                .withReferences("T42")
+                .withDescription("qwer")
+                .build();
     }
 }
 
