@@ -50,5 +50,7 @@ public class MilestonesTest extends BaseTest {
         Assert.assertTrue(milestonesStep.deleteNewMilestone().isPageOpened());
 
     }
-}
+
+    }
+
 

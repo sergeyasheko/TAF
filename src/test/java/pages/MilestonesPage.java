@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class MilestonesPage extends BasePage {
 
-    private final static String pagePath = "/index.php?/milestones/overview/54";
+    private final static String pagePath = "/index.php?/milestones/overview/57";
     private By milestonesPageLocator = By.cssSelector(".content-header-title.page_title");
     private By addMilestoneButtonLocator = By.cssSelector("div.button-group>a.button.button-left.button-add");
     private By successMessageMilestoneLocator = By.cssSelector(".message.message-success");
