@@ -16,4 +16,19 @@ public class LoggerTest {
         logger.error("Error Message: ...");
         logger.fatal("Fatal Message: Конец теста...");
     }
+
+    @Test
+    public void loginTest() {
+        logger.trace("login test is started...");
+
+        logger.trace("инициализируем начальные переменные...");
+        int a = 10;
+        int b = 0;
+
+        if (b == 0) {
+            logger.fatal("Делитель равен нулю...");
+        }
+        int c = a / b;
+        logger.trace("login test is finished...");
+    }
 }
