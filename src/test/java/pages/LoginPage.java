@@ -1,12 +1,11 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    public SelenideElement username = $(By.id("name"));
-    public SelenideElement password = $("#password");
-    public SelenideElement loginButton = $("#button_primary");
+    public SelenideElement username = $(".input[type='text']");
+    public SelenideElement password = $(".input[type='password']");
+    public SelenideElement loginButton = $(".button.is-vcentered");
 }
