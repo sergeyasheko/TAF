@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AddMilestonePage extends BasePage {
-    private final static String pagePath = "/index.php?/milestones/add/11/1";
+    private final static String pagePath = "/index.php?/milestones/add/61/1";
     private By addMilestonePageLocator = By.cssSelector(".content-header-title.page_title");
     private By nameMilestoneInputLocator = By.cssSelector(".form-control#name");
     private By addNewMilestoneButtonLocator = By.cssSelector("#accept.button");
@@ -26,11 +26,11 @@ public class AddMilestonePage extends BasePage {
     }
 
     public WebElement getNameMilestoneInput() {
-        return driver.findElement(nameMilestoneInputLocator);
+        return waitsService.waitForExists(nameMilestoneInputLocator);
     }
 
     public WebElement getAddNewMilestoneButton() {
-        return driver.findElement(addNewMilestoneButtonLocator);
+        return waitsService.waitForExists(addNewMilestoneButtonLocator);
     }
 
 }

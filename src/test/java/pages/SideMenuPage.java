@@ -19,7 +19,7 @@ public class SideMenuPage extends BasePage {
     }
 
     public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectButtonLocator); // кнопка создать новый проект
+        return waitsService.waitForExists(addProjectButtonLocator); // кнопка создать новый проект
     }
 }
 

@@ -28,10 +28,10 @@ public class AddProjectPage extends BasePage {
     }
 
     public WebElement getProjectNameInput() {
-        return driver.findElement(projectNameInputLocator);
+        return waitsService.waitForExists(projectNameInputLocator);
     }
 
     public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectButtonLocator);
+        return waitsService.waitForExists(addProjectButtonLocator);
     }
 }
