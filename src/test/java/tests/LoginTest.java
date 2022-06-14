@@ -1,5 +1,6 @@
 package tests;
 
+import baseentities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.annotations.Test;
 
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
     @Test(description = "Успешный логин")
     public void successfulLoginTest() {
