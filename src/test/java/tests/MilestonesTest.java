@@ -31,7 +31,7 @@ public class MilestonesTest extends BaseTest {
         Assert.assertTrue(milestonesStep.readMilestone(milestone).getNewMilestonesPage().isDisplayed());
     }
 
-    @Test(dependsOnMethods = "addNewMilestoneBuilderTest", priority = 2)
+    @Test(dependsOnMethods = "addNewMilestoneBuilderTest", priority = 3)
     public void editMilestoneBuilderTest() {
         Milestone milestone = Milestone
                 .builder()

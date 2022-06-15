@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class NewMilestonePage extends BasePage {
-    private final static String pagePath = "/index.php?/milestones/edit/44";
+    private final static String pagePath = "/index.php?/milestones/edit/52";
     private By newMilestonesPageLocator = By.cssSelector(".content-header-title.page_title");
     private By referencesInputLocator = By.cssSelector("#reference");
     private By saveMilestoneButtonLocator = By.cssSelector("#accept");
