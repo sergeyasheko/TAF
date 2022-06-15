@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
 import java.util.Locale;
 
 public class BrowserService {
@@ -32,11 +33,14 @@ public class BrowserService {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0)); //Неявные ожидания элемента
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40)); //Неявные ожидания страниц
+//        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60)); //Неявные ожидания скриптов
         return this.driver;
 
     }
 
-    public ChromeOptions getChromeOptions (){
+    public ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setHeadless(ReadProperties.isHeadless());
         chromeOptions.addArguments("--disable-gpu");
