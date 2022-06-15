@@ -1,6 +1,8 @@
 package steps;
 
 import baseEntities.BaseStep;
+import configuration.ReadProperties;
+import models.UserBuilder;
 import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -11,8 +13,8 @@ public class LoginStep extends BaseStep {
         super(driver);
     }
 
-    public DashboardPage successLogin(String email, String psw) {
-        login(email, psw);
+    public DashboardPage successLogin(UserBuilder userBuilder) {
+        login(ReadProperties.username(), ReadProperties.password());
 
         return dashboardPage;
     }

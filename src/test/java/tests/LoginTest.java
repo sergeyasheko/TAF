@@ -10,8 +10,13 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void successLoginTest() {
+        UserBuilder userBuilder = UserBuilder
+                .builder()
+                .email("atrostyanko@gmail.com")
+                .psw("Americana#1")
+                .build();
         Assert.assertTrue(
-                loginStep.successLogin(ReadProperties.username(), ReadProperties.password()).isPageOpened()
+                loginStep.successLogin(userBuilder).isPageOpened()
         );
     }
 
@@ -31,12 +36,4 @@ public class LoginTest extends BaseTest {
                 "Неверное сообщение об ошибке");
     }
 
-    @Test
-    public void successLoginBuilderTest() {
-        UserBuilder userBuilder = new UserBuilder
-                .Builder()
-                .withEmail("atrostyanko@gmail.com")
-                .withPsw("Americana#1")
-                .build();
-    }
 }

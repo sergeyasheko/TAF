@@ -1,8 +1,8 @@
 package tests;
 
 import baseEntities.BaseTest;
-import configuration.ReadProperties;
 import models.Milestone;
+import models.UserBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,12 @@ public class MilestonesTest extends BaseTest {
                 .builder()
                 .name("first")
                 .build();
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        UserBuilder userBuilder = UserBuilder
+                .builder()
+                .email("atrostyanko@gmail.com")
+                .psw("Americana#1")
+                .build();
+        loginStep.successLogin(userBuilder);
         navigationStep.navigateToAddMilestonesPage();
         Assert.assertTrue(milestonesStep.addNewMilestone(milestone).getSuccessMessageMilestone().isDisplayed());
     }
@@ -26,7 +31,12 @@ public class MilestonesTest extends BaseTest {
                 .builder()
                 .name("first")
                 .build();
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        UserBuilder userBuilder = UserBuilder
+                .builder()
+                .email("atrostyanko@gmail.com")
+                .psw("Americana#1")
+                .build();
+        loginStep.successLogin(userBuilder);
         navigationStep.navigateToMilestonesPage();
         Assert.assertTrue(milestonesStep.readMilestone(milestone).getNewMilestonesPage().isDisplayed());
     }
@@ -37,7 +47,12 @@ public class MilestonesTest extends BaseTest {
                 .builder()
                 .name("first")
                 .build();
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        UserBuilder userBuilder = UserBuilder
+                .builder()
+                .email("atrostyanko@gmail.com")
+                .psw("Americana#1")
+                .build();
+        loginStep.successLogin(userBuilder);
         navigationStep.navigateToMilestonesPage();
         milestonesStep.editMilestone(milestone);
         Assert.assertTrue(milestonesStep.editMilestone(milestone).getSuccessfullyUpdatedMessage().isDisplayed());
@@ -49,7 +64,12 @@ public class MilestonesTest extends BaseTest {
                 .builder()
                 .name("first")
                 .build();
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        UserBuilder userBuilder = UserBuilder
+                .builder()
+                .email("atrostyanko@gmail.com")
+                .psw("Americana#1")
+                .build();
+        loginStep.successLogin(userBuilder);
         navigationStep.navigateToMilestonesPage();
         Assert.assertTrue(milestonesStep.deleteNewMilestone(milestone).isPageOpened());
 
