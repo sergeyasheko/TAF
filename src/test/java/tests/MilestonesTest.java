@@ -13,7 +13,7 @@ public class MilestonesTest extends BaseTest {
     public void addNewMilestoneTest() {
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToAddMilestonesPage();
-        Assert.assertTrue(milestonesStep.addNewMilestone("first").getSuccessMessageMilestone().isDisplayed());
+        //Assert.assertTrue(milestonesStep.addNewMilestone("first").getSuccessMessageMilestone().isDisplayed());
     }
 
     @Test(dependsOnMethods = "addNewMilestoneTest")
@@ -41,12 +41,20 @@ public class MilestonesTest extends BaseTest {
 
     @Test
     public void addNewMilestoneBuilderTest() {
-        Milestone milestone = new Milestone
-                .Builder()
-                .withName("first")
-                .withReferences("T42")
-                .withDescription("qwer")
+        Milestone milestone = Milestone
+                .builder()
+                .name("first")
                 .build();
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        navigationStep.navigateToAddMilestonesPage();
+        Assert.assertTrue(milestonesStep.addNewMilestone(milestone).getSuccessMessageMilestone().isDisplayed());
+    }
+
+    @Test(dependsOnMethods = "addNewMilestoneBuilderTest")
+    public void readMilestoneBuilderTest() {
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        navigationStep.navigateToMilestonesPage();
+        Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
     }
 }
 

@@ -1,47 +1,34 @@
 package models;
 
+import lombok.Builder;
+import lombok.ToString;
+
+@Builder
+@ToString
 public class Milestone {
 
-    private String name;
+    /**
+     * Name of the Milestone
+     *
+     * @param name New value for this Milestone's name.
+     * @return The current value of this Milestone's name.
+     */
+    private String name = "first";
+
+    /**
+     * Age of the person
+     *
+     * @param age New value for this person's age.
+     * @return The current value of this person's age.
+     */
     private String references;
+
+    /**
+     * Age of the person
+     *
+     * @param age New value for this person's age.
+     * @return The current value of this person's age.
+     */
     private String description;
 
-    public static class Builder {
-        private Milestone newMilestone;
-
-        public Builder() {
-            newMilestone = new Milestone();
-        }
-
-        public Builder withName(String name) {
-            newMilestone.name = name;
-            return this;
-        }
-
-        public Builder withReferences(String references) {
-            newMilestone.references = references;
-            return this;
-        }
-
-        public Builder withDescription(String description) {
-            newMilestone.description = description;
-            return this;
-        }
-
-        public Milestone build() {
-            return newMilestone;
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getReferences() {
-        return references;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-}
+  }
