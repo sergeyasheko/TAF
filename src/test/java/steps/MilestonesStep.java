@@ -22,34 +22,23 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
-    public NewMilestonePage readMilestone() {
+    public NewMilestonePage readMilestone(Milestone milestone) {
         milestonesPage.getReadMilestone().click();
         return newMilestonePage;
     }
 
-    public MilestonesPage editMilestone() {
-        milestonesPage.getEditNewMilestone().click();
+    public MilestonesPage editMilestone(Milestone milestone) {
+        milestonesPage.getEditMilestone().click();
         newMilestonePage.getReferencesInput().clear();
         newMilestonePage.getReferencesInput().sendKeys(newReferenceName);
         newMilestonePage.getSaveMilestoneButton().click();
         return milestonesPage;
     }
 
-    public MilestonesPage openUpdateMessage() {
-        editMilestone().getSuccessfullyUpdatedMessage();
-        return milestonesPage;
-    }
-
-    public MilestonesPage deleteNewMilestone() {
-        milestonesPage.getDeleteNewMilestone().click();
+    public MilestonesPage deleteNewMilestone(Milestone milestone) {
+        milestonesPage.getDeleteMilestone().click();
         milestonesPage.getConfirmationDeleteButton().click();
         return milestonesPage;
     }
-
-    public MilestonesPage openDeleteMessage() {
-        deleteNewMilestone().getSuccessfullyDeleteMessage();
-        return milestonesPage;
-    }
-
 
 }

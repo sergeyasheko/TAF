@@ -9,37 +9,7 @@ import org.testng.annotations.Test;
 
 public class MilestonesTest extends BaseTest {
 
-    @Test
-    public void addNewMilestoneTest() {
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        navigationStep.navigateToAddMilestonesPage();
-        //Assert.assertTrue(milestonesStep.addNewMilestone("first").getSuccessMessageMilestone().isDisplayed());
-    }
-
-    @Test(dependsOnMethods = "addNewMilestoneTest")
-    public void readMilestoneTest() {
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        navigationStep.navigateToMilestonesPage();
-        Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
-    }
-
-    @Test(dependsOnMethods = "addNewMilestoneTest")
-    public void editMilestoneTest() {
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        navigationStep.navigateToMilestonesPage();
-        milestonesStep.editMilestone();
-        Assert.assertTrue(milestonesStep.editMilestone().getSuccessfullyUpdatedMessage().isDisplayed());
-    }
-
-    @Test(dependsOnMethods = "editMilestoneTest")
-    public void deleteMilestoneTest() {
-        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
-        navigationStep.navigateToMilestonesPage();
-        Assert.assertTrue(milestonesStep.deleteNewMilestone().isPageOpened());
-
-    }
-
-    @Test
+    @Test(priority = 1)
     public void addNewMilestoneBuilderTest() {
         Milestone milestone = Milestone
                 .builder()
@@ -50,11 +20,39 @@ public class MilestonesTest extends BaseTest {
         Assert.assertTrue(milestonesStep.addNewMilestone(milestone).getSuccessMessageMilestone().isDisplayed());
     }
 
-    @Test(dependsOnMethods = "addNewMilestoneBuilderTest")
+    @Test(dependsOnMethods = "addNewMilestoneBuilderTest", priority = 3)
     public void readMilestoneBuilderTest() {
+        Milestone milestone = Milestone
+                .builder()
+                .name("first")
+                .build();
         loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
         navigationStep.navigateToMilestonesPage();
-        Assert.assertTrue(milestonesStep.readMilestone().getNewMilestonesPage().isDisplayed());
+        Assert.assertTrue(milestonesStep.readMilestone(milestone).getNewMilestonesPage().isDisplayed());
+    }
+
+    @Test(dependsOnMethods = "addNewMilestoneBuilderTest", priority = 2)
+    public void editMilestoneBuilderTest() {
+        Milestone milestone = Milestone
+                .builder()
+                .name("first")
+                .build();
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        navigationStep.navigateToMilestonesPage();
+        milestonesStep.editMilestone(milestone);
+        Assert.assertTrue(milestonesStep.editMilestone(milestone).getSuccessfullyUpdatedMessage().isDisplayed());
+    }
+
+    @Test(dependsOnMethods = "editMilestoneBuilderTest", priority = 4)
+    public void deleteMilestoneBuilderTest() {
+        Milestone milestone = Milestone
+                .builder()
+                .name("first")
+                .build();
+        loginStep.successLogin(ReadProperties.username(), ReadProperties.password());
+        navigationStep.navigateToMilestonesPage();
+        Assert.assertTrue(milestonesStep.deleteNewMilestone(milestone).isPageOpened());
+
     }
 }
 

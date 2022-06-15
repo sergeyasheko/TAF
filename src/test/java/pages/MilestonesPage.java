@@ -12,9 +12,9 @@ public class MilestonesPage extends BasePage {
     private By addMilestoneButtonLocator = By.cssSelector("div.button-group>a.button.button-left.button-add");
     private By successMessageMilestoneLocator = By.cssSelector(".message.message-success");
     private By readMilestoneLocator = By.xpath("//a[contains(text(), 'first')]");
-    private By editNewMilestoneLocator = By.xpath("//*[contains(text(), 'Edit')]");
+    private By editMilestoneLocator = By.xpath("//*[contains(text(), 'Edit')]");
     private By successfullyUpdatedMessageLocator = By.xpath("//*[contains(text(),'Successfully updated the milestone.')]");
-    private By deleteNewMilestoneLocator = By.cssSelector(".icon-small-delete ");
+    private By deleteMilestoneLocator = By.cssSelector(".icon-small-delete ");
     private By successfullyDeleteMessageLocator = By.cssSelector("message message-success");
     private By confirmationDeleteButtonLocator = By.xpath("//div[@id='deleteDialog']/div[@class='dialog-body']/following-sibling::div[@class='button-group dialog-buttons-highlighted']/a[contains(text(), 'OK')]");
 
@@ -42,16 +42,16 @@ public class MilestonesPage extends BasePage {
 
     public WebElement getReadMilestone() {return  driver.findElement(readMilestoneLocator);}
 
-    public WebElement getEditNewMilestone() {
-        return driver.findElement(editNewMilestoneLocator);
+    public WebElement getEditMilestone() {
+        return driver.findElement(editMilestoneLocator);
     }
 
     public WebElement getSuccessfullyUpdatedMessage() {
         return driver.findElement(successfullyUpdatedMessageLocator);
     }
 
-    public WebElement getDeleteNewMilestone() {
-        return driver.findElement(deleteNewMilestoneLocator);
+    public WebElement getDeleteMilestone() {
+        return driver.findElement(deleteMilestoneLocator);
     }
 
     public WebElement getSuccessfullyDeleteMessage() {
