@@ -1,11 +1,12 @@
 package tests.api;
 
 import configuration.ReadProperties;
+import helpers.MilestoneHelper;
 import helpers.ProjectHelper;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import models.Milestone;
 import models.Project;
-import models.ProjectType;
 import org.apache.http.protocol.HTTP;
 import org.testng.annotations.BeforeTest;
 
@@ -13,7 +14,9 @@ import static io.restassured.RestAssured.given;
 
 public class BaseApiTest {
     public Project expectedProject;
+    public Milestone expectedMilestone;
     public ProjectHelper projectHelper;
+    public MilestoneHelper milestoneHelper;
 
     @BeforeTest
     public void setupEnv() {
@@ -25,10 +28,15 @@ public class BaseApiTest {
 
         expectedProject =
                 Project.builder()
-                        .name("WP_Test_03")
-                        .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
+                        .name("QA18")
+                        .build();
+
+        expectedMilestone =
+                Milestone.builder()
+                        .name("first")
                         .build();
 
         projectHelper = new ProjectHelper();
+        milestoneHelper = new MilestoneHelper();
     }
 }

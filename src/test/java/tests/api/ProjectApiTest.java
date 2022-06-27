@@ -11,11 +11,10 @@ public class ProjectApiTest extends BaseApiTest {
     public void positiveTest() {
         Project expectedProject = Project.builder()
                 .typeOfProject(1)
-                .name("WP Test")
-                .announcement("Test An")
+                .name("QA18")
                 .build();
 
-        Assert.assertTrue(projectHelper.getProject(1).equals(expectedProject));
+        Assert.assertTrue(projectHelper.getProject(57).equals(expectedProject));
     }
 
     @Test
@@ -25,7 +24,7 @@ public class ProjectApiTest extends BaseApiTest {
 
     @Test
     public void positiveCountProjectsTest() {
-        Assert.assertEquals(projectHelper.getAllProjects().size(), 5);
-        Assert.assertEquals(projectHelper.getAllProjects().get(0).getName(), "WP Test");
+        Assert.assertEquals(projectHelper.getAllProjects().size(), 78);
+        Assert.assertEquals(projectHelper.getProject(57).getName(), "QA18");
     }
 }
